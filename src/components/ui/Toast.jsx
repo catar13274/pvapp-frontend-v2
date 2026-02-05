@@ -89,6 +89,7 @@ export const ToastContainer = ({ children, className }) => {
 /**
  * Simple toast hook for programmatic usage
  */
+// eslint-disable-next-line react-refresh/only-export-components
 export const useToast = () => {
   const [toasts, setToasts] = React.useState([])
 

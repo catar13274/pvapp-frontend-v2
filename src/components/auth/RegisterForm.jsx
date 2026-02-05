@@ -59,6 +59,7 @@ const RegisterForm = () => {
     
     if (!validate()) return
     
+    // eslint-disable-next-line no-unused-vars
     const { confirmPassword, ...userData } = formData
     register.mutate(userData)
   }

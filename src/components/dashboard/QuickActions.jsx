@@ -1,8 +1,7 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
-import { Plus, Package, ShoppingCart, Building2 } from 'lucide-react'
+import { Package, ShoppingCart, Building2 } from 'lucide-react'
 
 /**
  * Quick Actions Component

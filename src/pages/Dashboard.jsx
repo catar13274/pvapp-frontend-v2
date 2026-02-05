@@ -9,7 +9,6 @@ import { Spinner } from '@/components/ui/Loading'
 import { useMaterialsByCompany, useLowStock } from '@/hooks/useMaterials'
 import { usePurchasesByCompany } from '@/hooks/usePurchases'
 import useCompanyStore from '@/store/companyStore'
-import { formatDate } from '@/lib/utils'
 
 /**
  * Dashboard Page

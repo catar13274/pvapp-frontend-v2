@@ -17,7 +17,7 @@ const CompanyList = () => {
   const [search, setSearch] = React.useState('')
   const [selectedCompany, setSelectedCompany] = React.useState(null)
   const [dialogOpen, setDialogOpen] = React.useState(false)
-  const [deleteId, setDeleteId] = React.useState(null)
+  // const [deleteId, setDeleteId] = React.useState(null) // TODO: Implement delete confirmation
 
   const { data: companies = [], isLoading } = useCompanies()
   const deleteCompany = useDeleteCompany()
