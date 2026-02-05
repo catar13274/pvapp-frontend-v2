@@ -3,6 +3,7 @@ FastAPI Main Application
 PVApp 2.0 - Backend API for inventory and purchase management
 """
 import os
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
@@ -12,6 +13,20 @@ from app.routers import auth, companies, materials, purchases
 # Load environment variables
 load_dotenv()
 
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """
+    Lifespan context manager for startup/shutdown events
+    """
+    # Startup
+    Base.metadata.create_all(bind=engine)
+    print("✅ Database tables created/verified")
+    print(f"✅ Server starting on http://{os.getenv('HOST', '0.0.0.0')}:{os.getenv('PORT', 8000)}")
+    yield
+    # Shutdown (if needed)
+
+
 # Create FastAPI application
 app = FastAPI(
     title="PVApp 2.0 API",
@@ -19,6 +34,7 @@ app = FastAPI(
     description="Backend API for PVApp inventory and purchase management system",
     docs_url="/docs",
     redoc_url="/redoc",
+    lifespan=lifespan,
 )
 
 # CORS Configuration
@@ -44,17 +60,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
-# Create database tables on startup
-@app.on_event("startup")
-async def startup_event():
-    """
-    Initialize database tables on application startup
-    """
-    Base.metadata.create_all(bind=engine)
-    print("✅ Database tables created/verified")
-    print(f"✅ Server starting on http://{os.getenv('HOST', '0.0.0.0')}:{os.getenv('PORT', 8000)}")
 
 
 # Root endpoint

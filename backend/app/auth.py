@@ -3,6 +3,7 @@ Authentication Utilities
 JWT token creation, password hashing, and verification
 """
 import os
+import sys
 from datetime import datetime, timedelta
 from typing import Optional
 from jose import JWTError, jwt
@@ -16,6 +17,16 @@ load_dotenv()
 SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key-change-this-in-production")
 ALGORITHM = os.getenv("ALGORITHM", "HS256")
 ACCESS_TOKEN_EXPIRE_DAYS = int(os.getenv("ACCESS_TOKEN_EXPIRE_DAYS", "30"))
+
+# Security check for production
+if SECRET_KEY == "your-secret-key-change-this-in-production":
+    if os.getenv("DEBUG", "True").lower() != "true":
+        print("❌ CRITICAL: SECRET_KEY is using default value in production mode!")
+        print("   Set a secure SECRET_KEY in .env file")
+        print("   Generate with: python -c \"import secrets; print(secrets.token_hex(32))\"")
+        sys.exit(1)
+    else:
+        print("⚠️  WARNING: Using default SECRET_KEY. Change this in production!")
 
 # Password hashing context
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")

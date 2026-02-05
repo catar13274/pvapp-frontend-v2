@@ -3,7 +3,7 @@ Database Initialization Script
 Creates database tables and populates with demo data
 """
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from decimal import Decimal
 from app.database import engine, SessionLocal, Base
 from app.models import User, Company, Material, MaterialMovement, Purchase, PurchaseItem
@@ -161,7 +161,7 @@ def init_db():
             invoice_number="INV-2024-001",
             supplier_name="Tech Distributors LLC",
             supplier_contact="sales@techdist.com | +1-555-0300",
-            purchase_date=datetime.utcnow() - timedelta(days=7),
+            purchase_date=datetime.now(timezone.utc) - timedelta(days=7),
             status="completed",
             total_amount=Decimal("0"),  # Will be updated
             notes="Regular monthly stock replenishment",
@@ -204,7 +204,7 @@ def init_db():
             invoice_number="INV-2024-002",
             supplier_name="Component Wholesale Co.",
             supplier_contact="orders@compwholesale.com | +1-555-0400",
-            purchase_date=datetime.utcnow() - timedelta(days=2),
+            purchase_date=datetime.now(timezone.utc) - timedelta(days=2),
             status="pending",
             total_amount=Decimal("0"),  # Will be updated
             notes="Urgent order for new project",

@@ -202,12 +202,6 @@ class PurchaseItemBase(BaseModel):
 class PurchaseItemCreate(PurchaseItemBase):
     material_id: Optional[int] = None
 
-    @field_validator("quantity", "unit_price")
-    def validate_decimals(cls, v):
-        if v < 0:
-            raise ValueError("Value must be non-negative")
-        return v
-
 
 class PurchaseItemUpdate(BaseModel):
     item_name: Optional[str] = Field(None, min_length=1, max_length=255)
