@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ################################################################################
-# PVApp 2.0 - Update Script
+# CoApp 2.0 - Update Script
 # 
-# This script updates the PVApp 2.0 installation with latest dependencies
+# This script updates the CoApp 2.0 installation with latest dependencies
 ################################################################################
 
 set -e  # Exit on any error
@@ -40,7 +40,7 @@ print_header() {
     echo ""
 }
 
-print_header "🔄 PVApp 2.0 Update"
+print_header "🔄 CoApp 2.0 Update"
 
 # Get current directory
 PROJECT_DIR=$(pwd)

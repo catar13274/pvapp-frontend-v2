@@ -1,4 +1,4 @@
-# PVApp 2.0 - Quick Start Guide
+# CoApp 2.0 - Quick Start Guide
 
 ## 🚀 Quick Start (Development)
 
@@ -29,11 +29,11 @@ npm run preview
 
 ## 🔑 Default Configuration
 
-The app connects to backend at: `http://localhost:8000`
+The app connects to backend at: `http://localhost:8001`
 
 To change this, edit `.env`:
 ```env
-VITE_API_BASE_URL=http://your-backend-url:8000
+VITE_API_BASE_URL=http://your-backend-url:8001
 ```
 
 ## 📱 First Time Usage
@@ -100,7 +100,7 @@ npm run lint     # Run ESLint
 ### Backend Connection Error
 ```bash
 # Check if backend is running
-curl http://localhost:8000/docs
+curl http://localhost:8001/docs
 ```
 
 ### Build Errors

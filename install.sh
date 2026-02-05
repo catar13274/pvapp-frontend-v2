@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ################################################################################
-# PVApp 2.0 - Installation Script
+# CoApp 2.0 - Installation Script
 # 
-# This script installs both the frontend and backend components of PVApp 2.0
+# This script installs both the frontend and backend components of CoApp 2.0
 # Optimized for Raspberry Pi and Linux environments
 ################################################################################
 
@@ -51,7 +51,7 @@ if [ "$EUID" -eq 0 ]; then
     fi
 fi
 
-print_header "🚀 PVApp 2.0 Installation"
+print_header "🚀 CoApp 2.0 Installation"
 
 # Check prerequisites
 print_info "Checking prerequisites..."
@@ -251,9 +251,9 @@ if [ "$INSTALL_MODE" = "1" ] || [ "$INSTALL_MODE" = "3" ]; then
     echo "1. Start the backend:"
     echo "   cd backend"
     echo "   source venv/bin/activate"
-    echo "   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000"
-    echo "   → Backend API: http://localhost:8000"
-    echo "   → API Docs: http://localhost:8000/docs"
+    echo "   uvicorn app.main:app --reload --host 0.0.0.0 --port 8001"
+    echo "   → Backend API: http://localhost:8001"
+    echo "   → API Docs: http://localhost:8001/docs"
     echo ""
 fi
 

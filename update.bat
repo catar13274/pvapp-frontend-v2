@@ -1,15 +1,15 @@
 @echo off
 REM ############################################################################
-REM PVApp 2.0 - Update Script (Windows)
+REM CoApp 2.0 - Update Script (Windows)
 REM 
-REM This script updates the PVApp 2.0 installation with latest dependencies
+REM This script updates the CoApp 2.0 installation with latest dependencies
 REM ############################################################################
 
 setlocal enabledelayedexpansion
 
 echo.
 echo ================================================================
-echo    PVApp 2.0 Update (Windows)
+echo    CoApp 2.0 Update (Windows)
 echo ================================================================
 echo.
 

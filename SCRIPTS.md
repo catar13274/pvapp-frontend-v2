@@ -1,6 +1,6 @@
-# PVApp 2.0 - Installation & Management Scripts
+# CoApp 2.0 - Installation & Management Scripts
 
-This document describes the installation, uninstallation, and update scripts for PVApp 2.0.
+This document describes the installation, uninstallation, and update scripts for CoApp 2.0.
 
 ## 📦 Available Scripts
 
@@ -214,7 +214,7 @@ cd pvapp-frontend-v2
 cd backend
 source venv/bin/activate  # Linux/Mac
 # or: venv\Scripts\activate  # Windows
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 
 # Start frontend (in new terminal)
 npm run dev
@@ -304,13 +304,13 @@ python init_db.py
 
 ### Port Already in Use
 
-Backend (8000):
+Backend (8001):
 ```bash
 # Linux/Mac
-lsof -ti:8000 | xargs kill -9
+lsof -ti:8001 | xargs kill -9
 
 # Windows
-netstat -ano | findstr :8000
+netstat -ano | findstr :8001
 taskkill /PID <PID> /F
 ```
 

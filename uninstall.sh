@@ -1,9 +1,9 @@
 #!/bin/bash
 
 ################################################################################
-# PVApp 2.0 - Uninstallation Script
+# CoApp 2.0 - Uninstallation Script
 # 
-# This script removes the PVApp 2.0 installation
+# This script removes the CoApp 2.0 installation
 ################################################################################
 
 set -e  # Exit on any error
@@ -40,9 +40,9 @@ print_header() {
     echo ""
 }
 
-print_header "🗑️  PVApp 2.0 Uninstallation"
+print_header "🗑️  CoApp 2.0 Uninstallation"
 
-print_warning "This will remove PVApp 2.0 and its dependencies."
+print_warning "This will remove CoApp 2.0 and its dependencies."
 read -p "Are you sure you want to continue? (y/N) " -n 1 -r
 echo
 if [[ ! $REPLY =~ ^[Yy]$ ]]; then

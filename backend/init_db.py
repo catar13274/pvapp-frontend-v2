@@ -13,7 +13,7 @@ def init_db():
     """
     Initialize database with tables and demo data
     """
-    print("🚀 Initializing PVApp 2.0 Database...")
+    print("🚀 Initializing CoApp 2.0 Database...")
     
     # Create all tables
     print("📦 Creating database tables...")

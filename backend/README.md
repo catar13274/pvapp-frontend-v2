@@ -1,6 +1,6 @@
-# PVApp 2.0 - Backend API
+# CoApp 2.0 - Backend API
 
-Complete FastAPI backend for PVApp inventory and purchase management system.
+Complete FastAPI backend for CoApp inventory and purchase management system.
 
 ## 🚀 Features
 
@@ -92,7 +92,7 @@ This will:
 ### Development Mode
 
 ```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 ```
 
 Or simply:
@@ -104,21 +104,21 @@ python -m app.main
 ### Production Mode
 
 ```bash
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
+uvicorn app.main:app --host 0.0.0.0 --port 8001 --workers 4
 ```
 
 The API will be available at:
-- **API Base URL:** http://localhost:8000
-- **Swagger UI:** http://localhost:8000/docs
-- **ReDoc:** http://localhost:8000/redoc
+- **API Base URL:** http://localhost:8001
+- **Swagger UI:** http://localhost:8001/docs
+- **ReDoc:** http://localhost:8001/redoc
 
 ## 📚 API Documentation
 
 ### Interactive Documentation
 
 Once the server is running, visit:
-- **Swagger UI (Interactive):** http://localhost:8000/docs
-- **ReDoc (Alternative):** http://localhost:8000/redoc
+- **Swagger UI (Interactive):** http://localhost:8001/docs
+- **ReDoc (Alternative):** http://localhost:8001/redoc
 
 ### Authentication Endpoints
 
@@ -185,7 +185,7 @@ Once the server is running, visit:
 
 ```bash
 # Register a new user
-curl -X POST http://localhost:8000/auth/register \
+curl -X POST http://localhost:8001/auth/register \
   -H "Content-Type: application/json" \
   -d '{
     "email": "user@example.com",
@@ -194,7 +194,7 @@ curl -X POST http://localhost:8000/auth/register \
   }'
 
 # Or login with existing user
-curl -X POST http://localhost:8000/auth/login \
+curl -X POST http://localhost:8001/auth/login \
   -H "Content-Type: application/json" \
   -d '{
     "email": "demo@pvapp.com",
@@ -223,7 +223,7 @@ Response:
 Include the token in the Authorization header:
 
 ```bash
-curl -X GET http://localhost:8000/companies/ \
+curl -X GET http://localhost:8001/companies/ \
   -H "Authorization: Bearer YOUR_TOKEN_HERE"
 ```
 
@@ -253,7 +253,7 @@ curl -X GET http://localhost:8000/companies/ \
 
 ```bash
 # Login
-curl -X POST http://localhost:8000/auth/login \
+curl -X POST http://localhost:8001/auth/login \
   -H "Content-Type: application/json" \
   -d '{"email": "demo@pvapp.com", "password": "demo123"}'
 
@@ -261,13 +261,13 @@ curl -X POST http://localhost:8000/auth/login \
 export TOKEN="your_token_here"
 
 # Test authenticated endpoint
-curl -X GET http://localhost:8000/companies/ \
+curl -X GET http://localhost:8001/companies/ \
   -H "Authorization: Bearer $TOKEN"
 ```
 
 ### Testing with Swagger UI
 
-1. Open http://localhost:8000/docs
+1. Open http://localhost:8001/docs
 2. Click "Authorize" button (🔒 icon)
 3. Login via `/auth/login` endpoint
 4. Copy the `access_token` from response
@@ -345,7 +345,7 @@ backend/
 
 ```bash
 pip install gunicorn
-gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
+gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8001
 ```
 
 ### Using Docker
@@ -369,7 +369,7 @@ Build and run:
 
 ```bash
 docker build -t pvapp-backend .
-docker run -p 8000:8000 pvapp-backend
+docker run -p 8000:8001 pvapp-backend
 ```
 
 ## 🔐 Security Best Practices
@@ -427,9 +427,9 @@ python -m app.main
 ### Port Already in Use
 
 ```bash
-# Find process using port 8000
-lsof -i :8000  # Linux/Mac
-netstat -ano | findstr :8000  # Windows
+# Find process using port 8001
+lsof -i :8001  # Linux/Mac
+netstat -ano | findstr :8001  # Windows
 
 # Kill the process or use different port
 uvicorn app.main:app --reload --port 8001
@@ -438,14 +438,14 @@ uvicorn app.main:app --reload --port 8001
 ## 📞 Support
 
 For issues or questions:
-1. Check API documentation: http://localhost:8000/docs
+1. Check API documentation: http://localhost:8001/docs
 2. Review error messages in console
 3. Check database integrity
 4. Verify environment variables
 
 ## 📄 License
 
-This project is part of PVApp 2.0 inventory management system.
+This project is part of CoApp 2.0 inventory management system.
 
 ## 🙏 Credits
 

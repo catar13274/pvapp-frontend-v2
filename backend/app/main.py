@@ -1,6 +1,6 @@
 """
 FastAPI Main Application
-PVApp 2.0 - Backend API for inventory and purchase management
+CoApp 2.0 - Backend API for inventory and purchase management
 """
 import os
 from contextlib import asynccontextmanager
@@ -22,16 +22,16 @@ async def lifespan(app: FastAPI):
     # Startup
     Base.metadata.create_all(bind=engine)
     print("✅ Database tables created/verified")
-    print(f"✅ Server starting on http://{os.getenv('HOST', '0.0.0.0')}:{os.getenv('PORT', 8000)}")
+    print(f"✅ Server starting on http://{os.getenv('HOST', '0.0.0.0')}:{os.getenv('PORT', 8001)}")
     yield
     # Shutdown (if needed)
 
 
 # Create FastAPI application
 app = FastAPI(
-    title="PVApp 2.0 API",
+    title="CoApp 2.0 API",
     version="2.0.0",
-    description="Backend API for PVApp inventory and purchase management system",
+    description="Backend API for CoApp inventory and purchase management system",
     docs_url="/docs",
     redoc_url="/redoc",
     lifespan=lifespan,
@@ -69,7 +69,7 @@ async def root():
     Root endpoint - API health check
     """
     return {
-        "message": "PVApp 2.0 API",
+        "message": "CoApp 2.0 API",
         "version": "2.0.0",
         "status": "operational",
         "docs": "/docs",
@@ -85,7 +85,7 @@ async def health_check():
     """
     return {
         "status": "healthy",
-        "api": "PVApp 2.0",
+        "api": "CoApp 2.0",
         "version": "2.0.0",
     }
 
@@ -125,7 +125,7 @@ if __name__ == "__main__":
     
     # Get configuration from environment
     host = os.getenv("HOST", "0.0.0.0")
-    port = int(os.getenv("PORT", 8000))
+    port = int(os.getenv("PORT", 8001))
     debug = os.getenv("DEBUG", "True").lower() == "true"
     
     # Run server

@@ -1,4 +1,4 @@
-# PVApp 2.0 Frontend - Complete Implementation Summary
+# CoApp 2.0 Frontend - Complete Implementation Summary
 
 ## 🎉 Project Status: **COMPLETE & PRODUCTION READY**
 
@@ -301,7 +301,7 @@ pvapp-frontend-v2/
 - `POST /purchases/{id}/items` - Add purchase item
 
 ### API Configuration
-- Base URL: `http://localhost:8000` (configurable via .env)
+- Base URL: `http://localhost:8001` (configurable via .env)
 - Timeout: 30 seconds (configurable)
 - Auto token injection via interceptors
 - Global error handling
@@ -442,7 +442,7 @@ server {
     
     # API proxy
     location /api {
-        proxy_pass http://localhost:8000;
+        proxy_pass http://localhost:8001;
         proxy_set_header Host $host;
     }
 }
@@ -557,10 +557,10 @@ npm run build
 **API connection issues?**
 ```bash
 # Check .env file
-VITE_API_BASE_URL=http://localhost:8000
+VITE_API_BASE_URL=http://localhost:8001
 
 # Verify backend is running
-curl http://localhost:8000/health
+curl http://localhost:8001/health
 ```
 
 ---
@@ -588,7 +588,7 @@ The application is **fully functional**, **well-documented**, and **optimized** 
 
 ## 📄 License
 
-This project is part of PVApp 2.0 - Multi-company materials management system.
+This project is part of CoApp 2.0 - Multi-company materials management system.
 
 ---
 

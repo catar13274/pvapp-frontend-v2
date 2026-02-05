@@ -1,15 +1,15 @@
 @echo off
 REM ############################################################################
-REM PVApp 2.0 - Installation Script (Windows)
+REM CoApp 2.0 - Installation Script (Windows)
 REM 
-REM This script installs both the frontend and backend components of PVApp 2.0
+REM This script installs both the frontend and backend components of CoApp 2.0
 REM ############################################################################
 
 setlocal enabledelayedexpansion
 
 echo.
 echo ================================================================
-echo    PVApp 2.0 Installation (Windows)
+echo    CoApp 2.0 Installation (Windows)
 echo ================================================================
 echo.
 
@@ -236,9 +236,9 @@ goto next_frontend
 echo 1. Start the backend:
 echo    cd backend
 echo    venv\Scripts\activate
-echo    uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-echo    -^> Backend API: http://localhost:8000
-echo    -^> API Docs: http://localhost:8000/docs
+echo    uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
+echo    -^> Backend API: http://localhost:8001
+echo    -^> API Docs: http://localhost:8001/docs
 echo.
 echo 2. Start the frontend (in a new terminal):
 echo    npm run dev
@@ -254,9 +254,9 @@ goto end_script
 echo 1. Start the backend:
 echo    cd backend
 echo    venv\Scripts\activate
-echo    uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-echo    -^> Backend API: http://localhost:8000
-echo    -^> API Docs: http://localhost:8000/docs
+echo    uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
+echo    -^> Backend API: http://localhost:8001
+echo    -^> API Docs: http://localhost:8001/docs
 echo.
 echo 2. Login credentials:
 echo    Email: demo@pvapp.com

@@ -1,15 +1,15 @@
 @echo off
 REM ############################################################################
-REM PVApp 2.0 - Uninstallation Script (Windows)
+REM CoApp 2.0 - Uninstallation Script (Windows)
 REM 
-REM This script removes the PVApp 2.0 installation
+REM This script removes the CoApp 2.0 installation
 REM ############################################################################
 
 setlocal enabledelayedexpansion
 
 echo.
 echo ================================================================
-echo    PVApp 2.0 Uninstallation (Windows)
+echo    CoApp 2.0 Uninstallation (Windows)
 echo ================================================================
 echo.
 

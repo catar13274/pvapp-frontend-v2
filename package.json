@@ -1,9 +1,9 @@
 {
-  "name": "pvapp-frontend-v2",
+  "name": "coapp-frontend-v2",
   "private": true,
   "version": "2.0.0",
   "type": "module",
-  "description": "PVApp 2.0 Frontend - Multi-company materials management system optimized for Raspberry Pi",
+  "description": "CoApp 2.0 Frontend - Multi-company materials management system optimized for Raspberry Pi",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

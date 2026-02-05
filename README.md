@@ -1,4 +1,4 @@
-# PVApp 2.0 - Complete Full-Stack Application
+# CoApp 2.0 - Complete Full-Stack Application
 
 Modern, high-performance full-stack application for multi-company materials and purchases management system, optimized for Raspberry Pi deployment.
 
@@ -51,7 +51,7 @@ Modern, high-performance full-stack application for multi-company materials and 
 
 ### Quick Install (Recommended)
 
-The easiest way to install PVApp 2.0 is using the automated installation scripts:
+The easiest way to install CoApp 2.0 is using the automated installation scripts:
 
 **Linux/Mac:**
 ```bash
@@ -121,10 +121,10 @@ This creates demo user: `demo@pvapp.com` / `demo123`
 
 6. **Start backend server**
 ```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 ```
-Backend will be available at `http://localhost:8000`
-API docs at `http://localhost:8000/docs`
+Backend will be available at `http://localhost:8001`
+API docs at `http://localhost:8001/docs`
 
 ### Frontend Setup
 
@@ -145,7 +145,7 @@ cp .env.example .env
 
 Edit `.env`:
 ```env
-VITE_API_BASE_URL=http://localhost:8000
+VITE_API_BASE_URL=http://localhost:8001
 ```
 
 4. **Start development server**
@@ -160,7 +160,7 @@ Frontend will be available at `http://localhost:3000`
 # Terminal 1 - Backend
 cd backend
 source venv/bin/activate
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 
 # Terminal 2 - Frontend
 npm run dev
@@ -175,11 +175,11 @@ Access the application at `http://localhost:3000` and login with:
 ### Backend Development
 ```bash
 cd backend
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8001
 ```
-- API: `http://localhost:8000`
-- Docs: `http://localhost:8000/docs` (Swagger UI)
-- ReDoc: `http://localhost:8000/redoc`
+- API: `http://localhost:8001`
+- Docs: `http://localhost:8001/docs` (Swagger UI)
+- ReDoc: `http://localhost:8001/redoc`
 - Auto-reload on file changes
 
 ### Frontend Development
@@ -192,7 +192,7 @@ npm run dev
 - Source maps for debugging
 
 ### API Documentation
-Visit `http://localhost:8000/docs` for interactive API documentation with:
+Visit `http://localhost:8001/docs` for interactive API documentation with:
 - All endpoints listed
 - Request/response schemas
 - Try-it-out functionality
@@ -242,7 +242,7 @@ The update script will:
 
 ### Uninstall Application
 
-To remove PVApp 2.0 from your system:
+To remove CoApp 2.0 from your system:
 
 **Linux/Mac:**
 ```bash
@@ -299,7 +299,7 @@ sudo apt install nginx python3-venv supervisor
 Create systemd service `/etc/systemd/system/pvapp-backend.service`:
 ```ini
 [Unit]
-Description=PVApp Backend API
+Description=CoApp Backend API
 After=network.target
 
 [Service]
@@ -307,7 +307,7 @@ Type=simple
 User=pi
 WorkingDirectory=/home/pi/pvapp-frontend-v2/backend
 Environment="PATH=/home/pi/pvapp-frontend-v2/backend/venv/bin"
-ExecStart=/home/pi/pvapp-frontend-v2/backend/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
+ExecStart=/home/pi/pvapp-frontend-v2/backend/venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8001
 Restart=always
 
 [Install]
@@ -346,7 +346,7 @@ server {
     
     # Backend API proxy
     location /api/ {
-        proxy_pass http://localhost:8000/;
+        proxy_pass http://localhost:8001/;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -355,7 +355,7 @@ server {
     
     # Direct backend access (optional, for debugging)
     location /docs {
-        proxy_pass http://localhost:8000/docs;
+        proxy_pass http://localhost:8001/docs;
         proxy_set_header Host $host;
     }
     
@@ -402,7 +402,7 @@ VITE_API_BASE_URL=http://raspberrypi.local/api
 ### 8. Verify Deployment
 ```bash
 # Check backend
-curl http://localhost:8000/health
+curl http://localhost:8001/health
 
 # Check frontend
 curl http://localhost/
@@ -606,8 +606,8 @@ pip install -r requirements.txt
 
 **Port Already in Use**
 ```bash
-# Find process on port 8000
-lsof -i :8000
+# Find process on port 8001
+lsof -i :8001
 kill <PID>
 # Or use different port
 uvicorn app.main:app --reload --port 8001
@@ -744,7 +744,7 @@ For issues and questions:
 
 ## 📚 Additional Resources
 
-- **Backend API Docs**: [http://localhost:8000/docs](http://localhost:8000/docs) (when running)
+- **Backend API Docs**: [http://localhost:8001/docs](http://localhost:8001/docs) (when running)
 - **Backend README**: [backend/README.md](backend/README.md)
 - **FastAPI Documentation**: [https://fastapi.tiangolo.com](https://fastapi.tiangolo.com)
 - **React Documentation**: [https://react.dev](https://react.dev)
