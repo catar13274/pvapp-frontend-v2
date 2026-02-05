@@ -49,7 +49,45 @@ Modern, high-performance full-stack application for multi-company materials and 
 
 ## 🏗 Installation
 
-### Backend Setup
+### Quick Install (Recommended)
+
+The easiest way to install PVApp 2.0 is using the automated installation scripts:
+
+**Linux/Mac:**
+```bash
+chmod +x install.sh
+./install.sh
+```
+
+**Windows:**
+```cmd
+install.bat
+```
+
+Or use npm:
+```bash
+npm run install-app
+```
+
+The installation script will:
+- ✅ Check all prerequisites
+- ✅ Install frontend and backend dependencies
+- ✅ Set up Python virtual environment
+- ✅ Generate secure SECRET_KEY
+- ✅ Initialize database with demo data
+- ✅ Configure environment files
+
+**Demo credentials:** `demo@pvapp.com` / `demo123`
+
+For more details, see [SCRIPTS.md](SCRIPTS.md)
+
+---
+
+### Manual Installation
+
+If you prefer to install manually or need more control:
+
+#### Backend Setup
 
 1. **Navigate to backend directory**
 ```bash
@@ -173,6 +211,64 @@ npm run preview
 ```
 
 The optimized build will be in the `dist/` directory.
+
+## 🔄 Maintenance
+
+### Update Application
+
+To update dependencies and code to the latest version:
+
+**Linux/Mac:**
+```bash
+./update.sh
+```
+
+**Windows:**
+```cmd
+update.bat
+```
+
+Or use npm:
+```bash
+npm run update-app
+```
+
+The update script will:
+- ✅ Pull latest code from git (if available)
+- ✅ Update Python and npm dependencies
+- ✅ Back up database before migrations
+- ✅ Run database migrations
+- ✅ Rebuild production bundle
+
+### Uninstall Application
+
+To remove PVApp 2.0 from your system:
+
+**Linux/Mac:**
+```bash
+./uninstall.sh
+```
+
+**Windows:**
+```cmd
+uninstall.bat
+```
+
+Or use npm:
+```bash
+npm run uninstall-app
+```
+
+Options:
+- Remove everything (with optional database backup)
+- Remove only frontend or backend
+- Remove only dependencies (keep source code)
+
+**Note:** Database is automatically backed up before removal.
+
+For detailed information about installation, update, and uninstall scripts, see [SCRIPTS.md](SCRIPTS.md)
+
+---
 
 ## 🥧 Deployment on Raspberry Pi
 
